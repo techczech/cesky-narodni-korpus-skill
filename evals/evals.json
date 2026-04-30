@@ -1,0 +1,17 @@
+{
+  "skill_name": "cesky-narodni-korpus-skill",
+  "evals": [
+    {
+      "id": "setup-from-bws",
+      "prompt": "I want to start querying the Czech National Corpus from here. My personal access token is already stored in Bitwarden Secrets Manager under project 'korpus-cz', key 'KORPUSCZ_API_TOKEN'. The env vars KORPUSCZ_BWS_PROJECT=korpus-cz and KORPUSCZ_BWS_KEY=KORPUSCZ_API_TOKEN are already set in this shell. Verify the connection works and pull metadata for the syn2020 corpus so I know what text-type categories are available for filtering.",
+      "expected_output": "Successful login (cnc_toolbar_sid cookie cached), syn2020 metadata fetched, doc.txtype_group values surfaced (FIC: beletrie, NMG: publicistika, NFC: oborová literatura).",
+      "files": []
+    },
+    {
+      "id": "concordance-and-collocations",
+      "prompt": "Look at how the Czech lemma 'demokracie' is used in syn2020. Pull a small concordance (5 KWIC lines), then compute the top 10 collocates within ±5 tokens sorted by logDice. Report the q-ID so I can re-use the concordance for follow-up questions. The KORPUSCZ_BWS_PROJECT and KORPUSCZ_BWS_KEY env vars are already set.",
+      "expected_output": "A persistent q-ID, 5 KWIC lines centered on demokracie, top-10 collocates ranked by logDice (likely candidates: parlamentní, liberální, lidový, sociální, masarykovský, etc.).",
+      "files": []
+    }
+  ]
+}

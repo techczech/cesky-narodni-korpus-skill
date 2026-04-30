@@ -1,0 +1,19 @@
+# Cached API responses and session cookies — never commit
+cache/*
+!cache/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Claude Code local state
+.claude/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
