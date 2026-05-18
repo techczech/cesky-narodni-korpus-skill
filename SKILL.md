@@ -1,19 +1,6 @@
 ---
 name: cesky-narodni-korpus-skill
-description: |
-  Query the Czech National Corpus (korpus.cz / KonText) HTTP API from Claude — concordances, frequency distributions (token, structural, two-dimensional), collocations, corpus metadata, and subcorpus creation — over ~50 Czech corpora (SYN family, oral_v3, the InterCorp parallel corpora, and more). Authenticates with a Personal Access Token via a configurable resolver chain (env var / file / macOS Keychain / Bitwarden Secrets Manager).
-
-  TRIGGERS: Use when:
-  - User asks to set up, install, or configure korpus.cz, ČNK, KonText, or "Český národní korpus" access
-  - User mentions a korpus.cz Personal Access Token, a `kontext-api` URL, or wants to authenticate against the Czech National Corpus
-  - User wants to run corpus-linguistics tasks against Czech corpora (SYN2020, SYN2015, oral_v3, InterCorp, etc.) from inside Claude
-  - User asks for Czech concordances, frequency lists, or collocations and references korpus.cz / ČNK / KonText / Lindat
-  - User wants to write or run CQL queries against Czech corpora via an agent
-
-  DO NOT trigger for:
-  - Sketch Engine corpora (English BNC, COCA, EnTenTen, Hansard, etc.) — see sketchengine-skill
-  - Generic corpus-linguistics work in Czech that doesn't involve korpus.cz — local NLTK / spaCy / CWB workflows belong elsewhere
-  - The Lindat KonText instance (kontext.korpus.cz redirects from CNC, but the tokens here authenticate the CNC instance only)
+description: "Query the Czech National Corpus."
 ---
 
 # Český národní korpus (korpus.cz / KonText) skill
