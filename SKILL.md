@@ -1,6 +1,6 @@
 ---
 name: cesky-narodni-korpus-skill
-description: "Query the Czech National Corpus."
+description: "Query the Czech National Corpus (korpus.cz, KonText API) for concordances, frequencies, collocations and corpus information, including token setup. Use for Czech-language corpus research."
 ---
 
 # Český národní korpus (korpus.cz / KonText) skill
@@ -108,6 +108,6 @@ For full triage, see [`references/troubleshooting.md`](references/troubleshootin
 ## Out of scope
 
 - Building or uploading custom corpora to korpus.cz — done via the CNC web UI's KonText, not the API.
-- Treq parallel-corpus translation lookups — exposed by a separate API (`https://treq.korpus.cz/api/v1`); the script does not currently wrap it. A `references/treq.md` is a TODO if there's demand.
+- Treq parallel-corpus translation lookups — exposed by a separate API (`https://treq.korpus.cz/api/v1`); the script does not currently wrap it. A `references/treq.md` is planned if there is demand; it does not exist yet.
 - LLM-mediated interpretation of results — the script returns JSON; interpretation happens in the conversation.
 - The Lindat KonText instance (`https://lindat.mff.cuni.cz/services/kontext/`). It runs the same software, but tokens issued by korpus.cz do not authenticate against it. The script's `KORPUSCZ_API_BASE` and `KORPUSCZ_LOGIN_URL` env vars allow pointing at a different instance if a user has separate credentials.

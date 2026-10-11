@@ -127,9 +127,9 @@ def _read_bws_secret(*, project: str, key: str) -> str:
         )
     env = os.environ.copy()
     if not env.get("BWS_ACCESS_TOKEN") and sys.platform == "darwin":
-        token = _read_macos_keychain("BWS_ACCESS_TOKEN")
-        if token:
-            env["BWS_ACCESS_TOKEN"] = token
+        keychain_value = _read_macos_keychain("BWS_ACCESS_TOKEN")
+        if keychain_value:
+            env["BWS_ACCESS_TOKEN"] = keychain_value
     if not env.get("BWS_ACCESS_TOKEN"):
         raise KorpusError(
             "BWS_ACCESS_TOKEN is not set and not in macOS Keychain (service "

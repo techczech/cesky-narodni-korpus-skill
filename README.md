@@ -1,8 +1,26 @@
 # cesky-narodni-korpus-skill
 
-A Claude Code / Claude Desktop skill for the [Czech National Corpus](https://www.korpus.cz/) (Český národní korpus, ČNK). Authenticates against the KonText HTTP API with a Personal Access Token and runs concordances, frequency distributions, collocations, corpus introspection, and subcorpus creation against the ~50 corpora hosted by CNC.
+**What it does.** Lets Claude query the [Czech National Corpus](https://www.korpus.cz/) (Český národní korpus, ČNK) through its KonText HTTP API: concordances, frequency distributions, collocations, corpus information and subcorpus creation across the roughly 50 corpora it hosts.
 
-Pluggable token resolution: works with a plain env var, a chmod-600 file, the macOS Keychain, or [Bitwarden Secrets Manager](https://bitwarden.com/products/secrets-manager/) — pick whichever matches your machine. The skill itself takes no opinion.
+**Who it is for.** Linguists, translators, teachers and students working with Czech.
+
+**What you need.**
+
+- Python 3.10 or later (standard library only; no packages to install). Any OS with Python; the Keychain token option is macOS only.
+- A free Czech National Corpus account and a Personal Access Token from your profile at <https://www.korpus.cz/>.
+- No paid services. Negligible disk or RAM; large responses are cached under `cache/` in the skill folder (git-ignored, and it holds a session cookie, so do not share it).
+
+**Install.**
+
+```bash
+# Claude Code
+git clone https://github.com/techczech/cesky-narodni-korpus-skill ~/.claude/skills/cesky-narodni-korpus-skill
+
+# Codex
+git clone https://github.com/techczech/cesky-narodni-korpus-skill ~/.codex/skills/cesky-narodni-korpus-skill
+```
+
+Pluggable token resolution: works with a plain env var, a chmod-600 file, the macOS Keychain, or [Bitwarden Secrets Manager](https://bitwarden.com/products/secrets-manager/); pick whichever matches your machine.
 
 ## Status
 
